@@ -1,0 +1,110 @@
+.app.dark {
+  background-color: #111;
+  color: rgb(156, 156, 156);
+
+  .chartGrid {
+    stroke: rgba(228, 228, 228, 0.219);
+  }
+
+  .table {
+    background-color: #111;
+
+    .tableCell {
+      color: gray;
+    }
+  }
+
+  .navbar {
+    color: #999;
+    border-color: #333;
+
+    .search {
+      border-color: gray;
+    }
+  }
+
+  .sidebar {
+    background-color: #111;
+    border-color: #333;
+
+    .top {
+      .logo {
+        color: #999;
+      }
+    }
+    hr {
+      border-color: #333;
+    }
+
+    ul {
+      li {
+        &:hover {
+          background-color: #333;
+        }
+
+        .icon {
+          color: #999;
+        }
+      }
+    }
+  }
+
+  .datatable {
+    background-color: #111;
+
+    // Styles for the DataGrid component
+    .datagrid {
+      background-color: #333;
+      color: gray;
+    }
+
+    .datagrid .datagrid-header {
+      background-color: #444;
+    }
+
+    .datagrid .datagrid-row-odd {
+      background-color: #2b2b2b;
+    }
+
+    .datagrid .datagrid-row-even {
+      background-color: #262626;
+    }
+
+    .datagrid .datagrid-row-selected {
+      background-color: #555;
+    }
+
+    .datagrid {
+      
+      // color: gray;
+      // border: none;
+
+      // // Style for column headers
+      // .MuiDataGrid-columnHeaderTitleContainer {
+      //   color: gray; // Change the color of the text in column headers
+      //   background-color: black; // Change the background color of column headers
+      // }
+
+      // // Style for checkbox in column headers
+      // .MuiCheckbox-root.MuiDataGrid-checkboxInput {
+      //   color: gray; // Change the color of the checkbox
+      // }
+
+      // // Style for three-dot symbol (menu options) in column headers
+      // .MuiDataGrid-menuIcon {
+      //   color: black; // Change the color of the menu icon
+      // }
+
+      .viewButton,
+      .deleteButton,
+      .cellWithStatus {
+        color: gray;
+        border: none;
+      }
+    }
+  }
+
+  input{
+      background-color: transparent;
+  }
+}
