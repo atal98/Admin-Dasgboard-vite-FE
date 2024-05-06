@@ -26,7 +26,7 @@ function DateDropDown() {
 
   return (
     <div className="container">
-      <label>Select Year:</label>
+      <label>Year:</label>
       <div className="year">
         <select
         // onChange={handleYearChange}
@@ -38,7 +38,7 @@ function DateDropDown() {
         </select>
       </div>
 
-      <label>Select Quarter:</label>
+      <label>Quarter:</label>
       <div className="quarter">
         <select
         // onChange={handleQuarterChange}

@@ -1,51 +1,89 @@
 .featured {
-    // flex: 2;
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 10px;
-    background-color: ghostwhite;
-    border-radius: 10px;
-  
-    .top {
-      // display: flex;
-      // align-items: center;
-      // justify-content: space-between;
-      color: gray;
-  
-      .title {
-        font-size: 16px;
-        // font-weight: 500;
-        margin-bottom: 10px;
-      }
-      
+  // flex: 2;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  background-color: ghostwhite;
+  border-radius: 10px;
+
+  .top {
+    color: gray;
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      color: rgb(160, 160, 160);
+      margin-bottom: 10px;
     }
-  
-    .bottom {
-      width: 350px;
+  }
 
-      .summary{
-        display: flex;
-        justify-content: space-between;
-        // padding: 25px;
+  .bottom {
+    .summary {
+      display: flex;
+      justify-content: space-between;
 
-        .item {
-          text-align: center;
-  
-          .itemTitle {
-            display: flex;
-            justify-content: center;
-            font-size: 14px;
-            color: gray;
-            margin-bottom: 10px;
+      .item {
+        text-align: center;
 
-            span{
-              font-size: 10px;
-              align-self:center;
-              padding-left: 2px;
-            }
+        .itemTitle {
+          display: flex;
+          justify-content: center;
+          font-size: 14px;
+          color: gray;
+          margin-bottom: 10px;
+
+          span {
+            font-size: 10px;
+            align-self: center;
+            padding-left: 2px;
           }
         }
       }
-      
     }
   }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+  .featured {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .top {
+      .title {
+        font-size: 12px !important;
+      }
+    }
+
+    .bottom {
+      .featuredChart {
+        padding: 0px 80px;
+      }
+
+      .summary {
+        padding: 0px 32px;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .featured {
+    .bottom {
+      .featuredChart {
+        padding: 0px 71px;
+      }
+      .summary {
+        .itemTitle {
+          font-size: 10px !important;
+        }
+
+        .resultAmount {
+          font-size: 10px !important;
+        }
+      }
+    }
+  }
+}

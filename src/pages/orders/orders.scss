@@ -1,26 +1,35 @@
-.order{
+.order {
   // display: flex;
   overflow: hidden; // added
   height: 100vh; // added
 
-  .wrapper{
+  .wrapper {
+    display: flex;
+    height: 100%;
+  }
+
+  .orderContainer {
+    flex: 50;
+    overflow-y: auto;
+
+    .widgets,
+    .charts {
       display: flex;
-      height: 100%;
-  }
+      padding: 20px;
+      gap: 20px;
+    }
 
-  .orderContainer{
-      flex: 50;
-      overflow-y: auto;
-
-      .widgets,.charts{
-        display: flex;
-        padding: 20px;
-        gap: 20px;
-      }
-    
-      .charts{
-        height: 50%;
-      }
+    // .charts {
+    //   height: 50%;
+    // }
   }
-    
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+  .charts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

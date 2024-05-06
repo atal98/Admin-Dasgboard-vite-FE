@@ -7,7 +7,7 @@ const NavBar = ({ title }) => {
   return (
     <div className="navbar">
       <div className="wrapper">
-        <span>{title}</span>
+        <span className="nav-title">{title}</span>
         <Date
         // onYearChange={onYearChange}
         // onQuarterChange={onQuarterChange}

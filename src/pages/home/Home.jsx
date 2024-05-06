@@ -24,7 +24,7 @@ const Home = () => {
         <SideBar />
         <div className="homeContainer">
           <NavBar
-            title="Dashboard - Overview"
+            title="Overview"
             // onYearChange={handleYearChange}
             // onQuarterChange={handleQuarterChange}
           />

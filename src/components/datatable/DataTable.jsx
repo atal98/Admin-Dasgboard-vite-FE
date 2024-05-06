@@ -254,7 +254,7 @@ export default function DataTable({ year, quarter }) {
               paginationModel: { pageSize: 5 },
             },
           }}
-          pageSizeOptions={[5, 10, 25]}
+          // pageSizeOptions={[5, 10, 25]}
           checkboxSelection={false}
         />
       </div>

@@ -46,27 +46,27 @@ const Revenue = ({ title }) => {
 
   data = [
     {
-      month_year: "Oct-2020",
+      month_year: "Oct/20",
       total_revenue: 0,
     },
     {
-      month_year: "Nov-2020",
+      month_year: "Nov/20",
       total_revenue: 0,
     },
     {
-      month_year: "Dec-2020",
+      month_year: "Dec/20",
       total_revenue: 0,
     },
     {
-      month_year: "Jan-2021",
+      month_year: "Jan/21",
       total_revenue: 19903.53,
     },
     {
-      month_year: "Feb-2021",
+      month_year: "Feb/21",
       total_revenue: 36064.34,
     },
     {
-      month_year: "Mar-2021",
+      month_year: "Mar/21",
       total_revenue: 4354.61,
     },
   ];
@@ -85,7 +85,7 @@ const Revenue = ({ title }) => {
               <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <XAxis dataKey="month_year" stroke="gray" />
+          <XAxis dataKey="month_year" stroke="gray" className="xAxisLabel" />
           {/* <YAxis /> */}
           {/* <CartesianGrid strokeDasharray="3 3" className="chartGrid" /> */}
           <Tooltip />

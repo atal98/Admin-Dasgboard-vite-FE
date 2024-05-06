@@ -1,23 +1,61 @@
 .chart {
-    // flex: 4;
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 10px;
-    color: gray;
-    background-color: ghostwhite;
-    border-radius: 10px;
-  
-    .title {
-      margin-bottom: 20px;
-    }
-  
-    .chartGrid {
-      stroke: rgb(228, 225, 225);
-    }
+  // flex: 4;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  color: gray;
+  background-color: ghostwhite;
+  border-radius: 10px;
 
-    .pie{
-      display: flex;
-      justify-content: center;
-    }
-
+  .title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: rgb(160, 160, 160);
   }
+  .chartGrid {
+    stroke: rgb(228, 225, 225);
+  }
+  .pie {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// // Responsive adjustments
+@media screen and (max-width: 768px) {
+  .chart {
+    .title {
+      font-size: 12px !important;
+    }
+    // Adjusted width and height for ResponsiveContainer
+    .recharts-responsive-container {
+      width: 100% !important;
+      height: 200px !important;
+      // Adjust these values as needed
+    }
+
+    .xAxisLabel {
+      font-size: 24px; // Adjust the font size of the XAxis labels here
+      // You can add more styling properties as needed
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .chart {
+    .recharts-responsive-container {
+      height: 280px !important;
+      // Adjust these values as needed
+    }
+
+    .xAxisLabel {
+      font-size: 23px; // Adjust the font size of the XAxis labels here
+      // You can add more styling properties as needed
+    }
+
+    .recharts-legend-wrapper {
+      width: 450px !important;
+      padding-bottom: 1rem;
+    }
+  }
+}

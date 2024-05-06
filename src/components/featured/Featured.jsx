@@ -65,7 +65,7 @@ const Featured = () => {
               matchColorWithArc: true,
               valueLabel: {
                 style: {
-                  fontSize: "33px",
+                  fontSize: "25px",
                   fontWeight: "200",
                   fill: "#000000",
                 },
