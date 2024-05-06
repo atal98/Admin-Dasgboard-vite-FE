@@ -62,12 +62,13 @@ const Featured = () => {
             }}
             value={40} // {data.percent}
             labels={{
-              matchColorWithArc: true,
+              // matchColorWithArc: true,
               valueLabel: {
                 style: {
                   fontSize: "25px",
-                  fontWeight: "200",
+                  fontWeight: "500",
                   fill: "#000000",
+                  textShadow: "none", // This removes the shadow
                 },
               },
             }}
