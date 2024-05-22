@@ -7,16 +7,16 @@ import Revenue from "../../components/chart/Revenue";
 import Widget from "../../components/widget/Widget";
 
 const Home = () => {
-  const [selectedYear, setSelectedYear] = useState("2021");
-  const [selectedQuarter, setSelectedQuarter] = useState("1");
+  // const [selectedYear, setSelectedYear] = useState("2021");
+  // const [selectedQuarter, setSelectedQuarter] = useState("1");
 
-  const handleYearChange = (year) => {
-    setSelectedYear(year);
-  };
+  // const handleYearChange = (year) => {
+  //   setSelectedYear(year);
+  // };
 
-  const handleQuarterChange = (quarter) => {
-    setSelectedQuarter(quarter);
-  };
+  // const handleQuarterChange = (quarter) => {
+  //   setSelectedQuarter(quarter);
+  // };
 
   return (
     <div className="home">
@@ -25,43 +25,46 @@ const Home = () => {
         <div className="homeContainer">
           <NavBar
             title="Overview"
-            onYearChange={handleYearChange}
-            onQuarterChange={handleQuarterChange}
+            // onYearChange={handleYearChange}
+            // onQuarterChange={handleQuarterChange}
           />
 
           <div className="widgets">
             <Widget
-              type="user"
-              parturl="total_user"
-              year={selectedYear}
-              quarter={selectedQuarter}
+            // type="user"
+            // parturl="total_user"
+            // year={selectedYear}
+            // quarter={selectedQuarter}
             />
             <Widget
-              type="order_fulfill"
-              parturl="total_order_fulfill"
-              year={selectedYear}
-              quarter={selectedQuarter}
+            // type="order_fulfill"
+            // parturl="total_order_fulfill"
+            // year={selectedYear}
+            // quarter={selectedQuarter}
             />
             <Widget
-              type="revenue"
-              parturl="total_revenue"
-              year={selectedYear}
-              quarter={selectedQuarter}
+            // type="revenue"
+            // parturl="total_revenue"
+            // year={selectedYear}
+            // quarter={selectedQuarter}
             />
             <Widget
-              type="profit"
-              parturl="total_gross_profit"
-              year={selectedYear}
-              quarter={selectedQuarter}
+            // type="profit"
+            // parturl="total_gross_profit"
+            // year={selectedYear}
+            // quarter={selectedQuarter}
             />
           </div>
 
           <div className="charts">
-            <Featured year={selectedYear} quarter={selectedQuarter} />
+            <Featured
+            // year={selectedYear}
+            // quarter={selectedQuarter}
+            />
             <Revenue
               title="LAST 6 MONTHS - REVENUE"
-              year={selectedYear}
-              quarter={selectedQuarter}
+              // year={selectedYear}
+              // quarter={selectedQuarter}
             />
           </div>
         </div>

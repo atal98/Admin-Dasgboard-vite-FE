@@ -1,28 +1,28 @@
 import React from "react";
 import "./datedropdown.scss";
 // { onYearChange, onQuarterChange }
-function DateDropDown({ onYearChange, onQuarterChange }) {
+function DateDropDown() {
   // State variables for selected year and quarter
   // const [selectedYear, setSelectedYear] = useState("2021");
   // const [selectedQuarter, setSelectedQuarter] = useState("Q1");
 
   // Function to handle year selection
-  const handleYearChange = (e) => {
-    // console.log("year", e.target.value);
-    // setSelectedYear(e.target.value);
-    const year = e.target.value;
-    // setSelectedYear(year);
-    onYearChange(year); // Pass selected year to parent component
-  };
+  // const handleYearChange = (e) => {
+  //   // console.log("year", e.target.value);
+  //   // setSelectedYear(e.target.value);
+  //   const year = e.target.value;
+  //   // setSelectedYear(year);
+  //   onYearChange(year); // Pass selected year to parent component
+  // };
 
   // Function to handle quarter selection
-  const handleQuarterChange = (e) => {
-    // console.log("quarter", e.target.value);
-    // setSelectedQuarter(e.target.value);
-    const quarter = e.target.value;
-    // setSelectedQuarter(quarter);
-    onQuarterChange(quarter); // Pass selected quarter to parent component
-  };
+  // const handleQuarterChange = (e) => {
+  //   // console.log("quarter", e.target.value);
+  //   // setSelectedQuarter(e.target.value);
+  //   const quarter = e.target.value;
+  //   // setSelectedQuarter(quarter);
+  //   onQuarterChange(quarter); // Pass selected quarter to parent component
+  // };
 
   return (
     <div className="container">

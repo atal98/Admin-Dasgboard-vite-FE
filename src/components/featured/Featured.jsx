@@ -1,47 +1,47 @@
 import "./featured.scss";
 import React, { useState, useEffect } from "react";
-import axios from "../axios/Axios";
+// import axios from "../axios/Axios";
 import "react-circular-progressbar/dist/styles.css";
 import GaugeComponent from "react-gauge-component";
-import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
+// import CircularProgress from "@mui/material/CircularProgress";
+// import Box from "@mui/material/Box";
 
 // { year, quarter }
 const Featured = ({ year, quarter }) => {
-  const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [data, setData] = useState({});
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          `/api/dashboard/target/?year=${year}&quarter=${quarter}`
-        );
-        setData(response.data);
-        setLoading(false);
-        // console.log("data", response.data);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await axios.get(
+  //         `/api/dashboard/target/?year=${year}&quarter=${quarter}`
+  //       );
+  //       setData(response.data);
+  //       setLoading(false);
+  //       // console.log("data", response.data);
+  //     } catch (error) {
+  //       setError(error);
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchData();
-  }, [year, quarter]);
+  //   fetchData();
+  // }, [year, quarter]);
 
-  if (loading) {
-    return (
-      <Box sx={{ display: "flex" }}>
-        <CircularProgress />
-      </Box>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <Box sx={{ display: "flex" }}>
+  //       <CircularProgress />
+  //     </Box>
+  //   );
+  // }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  // if (error) {
+  //   return <div>Error: {error.message}</div>;
+  // }
 
   return (
     <div className="featured">
@@ -60,7 +60,7 @@ const Featured = ({ year, quarter }) => {
                 { limit: 100, color: "#88E605", showTick: true },
               ],
             }}
-            value={data.percent} // {data.percent}
+            value={40} // {data.percent}
             labels={{
               // matchColorWithArc: true,
               valueLabel: {
@@ -79,19 +79,19 @@ const Featured = ({ year, quarter }) => {
           <div className="item">
             <div className="itemTitle">TARGET</div>
             <div className="itemResult">
-              <div className="resultAmount">₹{data.target}L</div> {/*data.target*/}
+              <div className="resultAmount">₹{5}L</div> {/*data.target*/}
             </div>
           </div>
           <div className="item">
             <div className="itemTitle">ACHIVED</div>
             <div className="itemResult">
-              <div className="resultAmount">₹{data.achived}L</div> {/*data.achived*/}
+              <div className="resultAmount">₹{2}L</div> {/*data.achived*/}
             </div>
           </div>
           <div className="item">
             <div className="itemTitle">REMAINING</div>
             <div className="itemResult">
-              <div className="resultAmount">₹{data.remaining}L</div> {/*data.remaining*/}
+              <div className="resultAmount">₹{3}L</div> {/*data.remaining*/}
             </div>
           </div>
         </div>
