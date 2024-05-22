@@ -28,7 +28,9 @@ function DateDropDown() {
     <div className="container">
       <label>Year:</label>
       <div className="year">
-        <select onChange={handleYearChange}>
+        <select
+        // onChange={handleYearChange}
+        >
           <option value="2021">2021</option>
           <option value="2022">2022</option>
           <option value="2023">2023</option>
@@ -38,7 +40,9 @@ function DateDropDown() {
 
       <label>Quarter:</label>
       <div className="quarter">
-        <select onChange={handleQuarterChange}>
+        <select
+        // onChange={handleQuarterChange}
+        >
           <option value="1">Q1</option>
           <option value="2">Q2</option>
           <option value="3">Q3</option>

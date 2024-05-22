@@ -31,28 +31,28 @@ const Home = () => {
 
           <div className="widgets">
             <Widget
-            // type="user"
-            // parturl="total_user"
-            // year={selectedYear}
-            // quarter={selectedQuarter}
+              type="user"
+              // parturl="total_user"
+              // year={selectedYear}
+              // quarter={selectedQuarter}
             />
             <Widget
-            // type="order_fulfill"
-            // parturl="total_order_fulfill"
-            // year={selectedYear}
-            // quarter={selectedQuarter}
+              type="order_fulfill"
+              // parturl="total_order_fulfill"
+              // year={selectedYear}
+              // quarter={selectedQuarter}
             />
             <Widget
-            // type="revenue"
-            // parturl="total_revenue"
-            // year={selectedYear}
-            // quarter={selectedQuarter}
+              type="revenue"
+              // parturl="total_revenue"
+              // year={selectedYear}
+              // quarter={selectedQuarter}
             />
             <Widget
-            // type="profit"
-            // parturl="total_gross_profit"
-            // year={selectedYear}
-            // quarter={selectedQuarter}
+              type="profit"
+              // parturl="total_gross_profit"
+              // year={selectedYear}
+              // quarter={selectedQuarter}
             />
           </div>
 
