@@ -1,50 +1,50 @@
 import React, { useState, useEffect } from "react";
 import "./widget.scss";
-// import axios from "../axios/Axios";
+import axios from "../axios/Axios";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import { Link } from "react-router-dom";
-// import CircularProgress from "@mui/material/CircularProgress";
-// import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 // { parturl, year, quarter }
-const Widget = ({ type }) => {
-  // const [data, setData] = useState({});
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+const Widget = ({ type, parturl, year, quarter }) => {
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       setLoading(true);
-  //       const response = await axios.get(
-  //         `/api/dashboard/${parturl}/?year=${year}&quarter=${quarter}`
-  //       );
-  //       setData(response.data);
-  //       setLoading(false);
-  //       // console.log("data", response.data);
-  //     } catch (error) {
-  //       setError(error);
-  //       setLoading(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `/api/dashboard/${parturl}/?year=${year}&quarter=${quarter}`
+        );
+        setData(response.data);
+        setLoading(false);
+        // console.log("data", response.data);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
 
-  //   fetchData();
-  // }, [parturl, year, quarter]);
+    fetchData();
+  }, [parturl, year, quarter]);
 
-  // if (loading) {
-  //   return (
-  //     <Box sx={{ display: "flex" }}>
-  //       <CircularProgress />
-  //     </Box>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
 
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // }
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   let count, title, isMoney, icon, link, linkto;
 
@@ -63,7 +63,7 @@ const Widget = ({ type }) => {
       );
       link = "See all users";
       linkto = "/users";
-      count = 100; // data.total_user
+      count = data.total_user; // data.total_user
 
       break;
     case "order_fulfill":
@@ -80,7 +80,7 @@ const Widget = ({ type }) => {
       );
       link = "View all orders";
       linkto = "/orders";
-      count = 100; //data.total_order_fulfill
+      count = data.total_order_fulfill; //data.total_order_fulfill
 
       break;
     case "revenue":
@@ -94,7 +94,7 @@ const Widget = ({ type }) => {
       );
       link = "View details";
       linkto = "/";
-      count = 100; //data.total_revenue
+      count = data.total_revenue; //data.total_revenue
 
       break;
     case "profit":
@@ -111,7 +111,7 @@ const Widget = ({ type }) => {
       );
       link = "View details";
       linkto = "/";
-      count = 100; //data.total_gross_profit
+      count = data.total_gross_profit; //data.total_gross_profit
 
       break;
     default:
