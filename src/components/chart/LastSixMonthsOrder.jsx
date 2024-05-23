@@ -1,6 +1,6 @@
 import "./chart.scss";
 import React, { useState, useEffect } from "react";
-// import axios from "../axios/Axios";
+import axios from "../axios/Axios";
 import {
   BarChart,
   Legend,
@@ -12,85 +12,85 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-// import CircularProgress from "@mui/material/CircularProgress";
-// import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 // { title, year, quarter }
-const LastSixMonthOrder = ({ title }) => {
-  // const [data, setData] = useState({});
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+const LastSixMonthOrder = ({ title, year, quarter }) => {
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       setLoading(true);
-  //       const response = await axios.get(
-  //         `/api/order/last_six_months_order_fulfill/?year=${year}&quarter=${quarter}`
-  //       );
-  //       setData(response.data);
-  //       setLoading(false);
-  //       console.log("data", response.data);
-  //     } catch (error) {
-  //       setError(error);
-  //       setLoading(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `/api/order/last_six_months_order_fulfill/?year=${year}&quarter=${quarter}`
+        );
+        setData(response.data);
+        setLoading(false);
+        console.log("data", response.data);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
 
-  //   fetchData();
-  // }, [year, quarter]);
+    fetchData();
+  }, [year, quarter]);
 
-  // if (loading) {
-  //   return (
-  //     <Box sx={{ display: "flex" }}>
-  //       <CircularProgress />
-  //     </Box>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
 
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // }
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
-  let data;
-  data = [
-    {
-      month_year: "Oct/20",
-      Tech: 0,
-      Sports: 0,
-      Satationary: 0,
-    },
-    {
-      month_year: "Nov/20",
-      Tech: 0,
-      Sports: 0,
-      Satationary: 0,
-    },
-    {
-      month_year: "Dec/20",
-      Tech: 0,
-      Sports: 0,
-      Satationary: 0,
-    },
-    {
-      month_year: "Jan/21",
-      Tech: 14,
-      Sports: 4,
-      Satationary: 5,
-    },
-    {
-      month_year: "Feb/21",
-      Tech: 26,
-      Sports: 10,
-      Satationary: 13,
-    },
-    {
-      month_year: "Mar/21",
-      Tech: 2,
-      Sports: 0,
-      Satationary: 8,
-    },
-  ];
+  // let data;
+  // data = [
+  //   {
+  //     month_year: "Oct/20",
+  //     Tech: 0,
+  //     Sports: 0,
+  //     Satationary: 0,
+  //   },
+  //   {
+  //     month_year: "Nov/20",
+  //     Tech: 0,
+  //     Sports: 0,
+  //     Satationary: 0,
+  //   },
+  //   {
+  //     month_year: "Dec/20",
+  //     Tech: 0,
+  //     Sports: 0,
+  //     Satationary: 0,
+  //   },
+  //   {
+  //     month_year: "Jan/21",
+  //     Tech: 14,
+  //     Sports: 4,
+  //     Satationary: 5,
+  //   },
+  //   {
+  //     month_year: "Feb/21",
+  //     Tech: 26,
+  //     Sports: 10,
+  //     Satationary: 13,
+  //   },
+  //   {
+  //     month_year: "Mar/21",
+  //     Tech: 2,
+  //     Sports: 0,
+  //     Satationary: 8,
+  //   },
+  // ];
 
   return (
     <div className="chart">

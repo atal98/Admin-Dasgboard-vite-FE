@@ -1,75 +1,75 @@
 import "./chart.scss";
 import React, { useState, useEffect } from "react";
-// import axios from "../axios/Axios";
+import axios from "../axios/Axios";
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from "recharts";
-// import CircularProgress from "@mui/material/CircularProgress";
-// import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 // { title, year, quarter }
 const Revenue = ({ title, year, quarter }) => {
-  // const [data, setData] = useState({});
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       setLoading(true);
-  //       const response = await axios.get(
-  //         `/api/dashboard/last_six_months_revenue/?year=${year}&quarter=${quarter}`
-  //       );
-  //       setData(response.data);
-  //       setLoading(false);
-  //       // console.log("data", response.data);
-  //     } catch (error) {
-  //       setError(error);
-  //       setLoading(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `/api/dashboard/last_six_months_revenue/?year=${year}&quarter=${quarter}`
+        );
+        setData(response.data);
+        setLoading(false);
+        // console.log("data", response.data);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
 
-  //   fetchData();
-  // }, [year, quarter]);
+    fetchData();
+  }, [year, quarter]);
 
-  // if (loading) {
-  //   return (
-  //     <Box sx={{ display: "flex" }}>
-  //       <CircularProgress />
-  //     </Box>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <Box sx={{ display: "flex" }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
 
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // }
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
-  let data;
+  // let data;
 
-  data = [
-    {
-      month_year: "Oct/20",
-      total_revenue: 0,
-    },
-    {
-      month_year: "Nov/20",
-      total_revenue: 0,
-    },
-    {
-      month_year: "Dec/20",
-      total_revenue: 0,
-    },
-    {
-      month_year: "Jan/21",
-      total_revenue: 19903.53,
-    },
-    {
-      month_year: "Feb/21",
-      total_revenue: 36064.34,
-    },
-    {
-      month_year: "Mar/21",
-      total_revenue: 4354.61,
-    },
-  ];
+  // data = [
+  //   {
+  //     month_year: "Oct/20",
+  //     total_revenue: 0,
+  //   },
+  //   {
+  //     month_year: "Nov/20",
+  //     total_revenue: 0,
+  //   },
+  //   {
+  //     month_year: "Dec/20",
+  //     total_revenue: 0,
+  //   },
+  //   {
+  //     month_year: "Jan/21",
+  //     total_revenue: 19903.53,
+  //   },
+  //   {
+  //     month_year: "Feb/21",
+  //     total_revenue: 36064.34,
+  //   },
+  //   {
+  //     month_year: "Mar/21",
+  //     total_revenue: 4354.61,
+  //   },
+  // ];
 
   return (
     <div className="chart">
