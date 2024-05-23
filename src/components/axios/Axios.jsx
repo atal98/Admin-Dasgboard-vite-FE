@@ -7,7 +7,7 @@ const baseURL = "https://admin-dashboard-be-2qkj.onrender.com/";
 //   : deployment_url;
 const AxiosInstance = axios.create({
   baseURL: baseURL,
-  timeout: 5000,
+  timeout: 100000,
   headers: {
     "Content-Type": "application/json",
     accept: "application/json",
