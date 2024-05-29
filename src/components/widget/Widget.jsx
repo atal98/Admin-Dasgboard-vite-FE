@@ -8,7 +8,6 @@ import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import { Link } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-
 // { parturl, year, quarter }
 const Widget = ({ type, parturl, year, quarter }) => {
   const [data, setData] = useState({});
@@ -46,7 +45,7 @@ const Widget = ({ type, parturl, year, quarter }) => {
     return <div>Error: {error.message}</div>;
   }
 
-  let count, title, isMoney, icon, link, linkto;
+  let count, title, isMoney, icon, link, linkto, count_color;
 
   switch (type) {
     case "user":
@@ -93,7 +92,7 @@ const Widget = ({ type, parturl, year, quarter }) => {
         />
       );
       link = "View details";
-      linkto = "/";
+      linkto = "/stats";
       count = data.total_revenue; //data.total_revenue
 
       break;
@@ -110,8 +109,9 @@ const Widget = ({ type, parturl, year, quarter }) => {
         />
       );
       link = "View details";
-      linkto = "/";
+      linkto = "/stats";
       count = data.total_gross_profit; //data.total_gross_profit
+      count_color = count > 0 ? "limegreen" : "crimson";
 
       break;
     default:
@@ -122,7 +122,7 @@ const Widget = ({ type, parturl, year, quarter }) => {
     <div className="widget">
       <div className="left">
         <span className="title">{title}</span>
-        <span className="counter">
+        <span className="counter " style={{ color: count_color }}>
           {isMoney && "₹"} {count}
         </span>
         <Link to={linkto} style={{ textDecoration: "none" }}>

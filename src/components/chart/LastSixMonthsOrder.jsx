@@ -5,12 +5,10 @@ import {
   BarChart,
   Legend,
   Bar,
-  CartesianGrid,
-  AreaChart,
-  Area,
   XAxis,
   Tooltip,
   ResponsiveContainer,
+  LabelList,
 } from "recharts";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
@@ -30,7 +28,7 @@ const LastSixMonthOrder = ({ title, year, quarter }) => {
         );
         setData(response.data);
         setLoading(false);
-        console.log("data", response.data);
+        console.log(" last six months order data", response.data);
       } catch (error) {
         setError(error);
         setLoading(false);
@@ -100,11 +98,35 @@ const LastSixMonthOrder = ({ title, year, quarter }) => {
           {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey="month_year" className="xAxisLabel" />
           {/* <YAxis /> */}
-          <Tooltip />
+          {/* <Tooltip /> */}
           <Legend wrapperStyle={{ fontSize: "12px" }} />
-          <Bar dataKey="Tech" fill="#8884d8" />
-          <Bar dataKey="Sports" fill="#82ca9d" />
-          <Bar dataKey="Satationary" fill="#FF000033" />
+          {/* <Bar dataKey="Tech" fill="#8884d8" /> */}
+          <Bar dataKey="Tech" fill="#8884d8">
+            <LabelList
+              dataKey="Tech"
+              position="top"
+              fill="#8884d8"
+              formatter={(value) => value}
+            />
+          </Bar>
+          {/* <Bar dataKey="Sports" fill="#82ca9d" /> */}
+          <Bar dataKey="Sports" fill="#82ca9d">
+            <LabelList
+              dataKey="Sports"
+              position="top"
+              fill="#82ca9d"
+              formatter={(value) => value}
+            />
+          </Bar>
+          {/* <Bar dataKey="Satationary" fill="#FF8680" /> */}
+          <Bar dataKey="Satationary" fill="#FF8680">
+            <LabelList
+              dataKey="Satationary"
+              position="top"
+              fill="#FF8680"
+              formatter={(value) => value}
+            />
+          </Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>

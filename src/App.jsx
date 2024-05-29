@@ -7,6 +7,7 @@ import SingleProduct from "./pages/single_product/Single_Product";
 import Order from "./pages/orders/Orders";
 import Delivery from "./pages/delivery/Delivery";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Stats from "./pages/stats/Stats";
 // import { productInputs, userInputs } from "./formSource";
 // import "./style/dark.scss";
 
@@ -46,6 +47,11 @@ function App() {
           {/* delivery */}
           <Route path="delivery">
             <Route index element={<Delivery />} />
+          </Route>
+
+          {/* stats */}
+          <Route path="stats">
+            <Route index element={<Stats />} />
           </Route>
         </Route>
       </Routes>

@@ -24,6 +24,7 @@ const Delivery = () => {
             title="Delivery"
             onYearChange={handleYearChange}
             onQuarterChange={handleQuarterChange}
+            selectedQuarter={selectedQuarter}
           />
 
           <div className="widgets">

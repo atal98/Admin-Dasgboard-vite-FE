@@ -26,6 +26,7 @@ const Orders = () => {
             title="Orders"
             onYearChange={handleYearChange}
             onQuarterChange={handleQuarterChange}
+            selectedQuarter={selectedQuarter}
           />
 
           <div className="widgets">
@@ -82,7 +83,16 @@ const Orders = () => {
               year={selectedYear}
               quarter={selectedQuarter}
             />
-            <Pie year={selectedYear} quarter={selectedQuarter} />
+            <Pie
+              title="Order Status Distribution"
+              section="order"
+              parturl="order_status_distribution"
+              year={selectedYear}
+              quarter={selectedQuarter}
+              margin_left={60}
+              outer_radius_size={100}
+              cx_axis={140}
+            />
           </div>
         </div>
       </div>

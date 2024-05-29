@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./users.scss";
 import SideBar from "../../components/sidebar/SideBar";
 import NavBar from "../../components/navbar/NavBar";
@@ -16,6 +16,7 @@ const Users = () => {
   const handleQuarterChange = (quarter) => {
     setSelectedQuarter(quarter);
   };
+
   return (
     <div className="list">
       <div className="wrapper">
@@ -25,6 +26,7 @@ const Users = () => {
             title="User"
             onYearChange={handleYearChange}
             onQuarterChange={handleQuarterChange}
+            selectedQuarter={selectedQuarter}
           />
 
           <div className="widgets">

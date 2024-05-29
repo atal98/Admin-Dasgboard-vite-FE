@@ -12,12 +12,19 @@
     font-weight: bold;
     color: rgb(160, 160, 160);
   }
+  .yAxisLabel {
+    display: none;
+  }
   .chartGrid {
     stroke: rgb(228, 225, 225);
   }
   .pie {
     display: flex;
     justify-content: center;
+  }
+  .stack-chart-container {
+    width: 826px;
+    height: 100%;
   }
 }
 
@@ -53,9 +60,25 @@
       // You can add more styling properties as needed
     }
 
+    .rev-yAxisLabel {
+      display: unset;
+    }
+
+    .recharts-label-list {
+      tspan {
+        font-size: 1.8rem;
+      }
+    }
+
     .recharts-legend-wrapper {
-      width: 400px !important;
+      width: 350px !important;
       padding-bottom: 1rem;
+
+      .recharts-default-legend {
+        .recharts-legend-item {
+          font-size: 12px;
+        }
+      }
     }
   }
 }

@@ -5,8 +5,7 @@ import { PieChart } from "@mui/x-charts/PieChart";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
-const Pie = ({
-  type,
+const GrowthRatePie = ({
   title,
   section,
   parturl,
@@ -32,7 +31,7 @@ const Pie = ({
         );
         setData(response.data);
         setLoading(false);
-        console.log("pie data", response.data);
+        console.log("growth rate pie data", response.data);
       } catch (error) {
         setError(error);
         setLoading(false);
@@ -54,11 +53,9 @@ const Pie = ({
     return <div>Error: {error.message}</div>;
   }
 
-  const TOTAL = data.map((item) => item.value).reduce((a, b) => a + b, 0);
-
   const getArcLabel = (params) => {
-    const percent = params.value / TOTAL;
-    return `${(percent * 100).toFixed(0)}%`;
+    console.log("ArcLabel params:", params.percent);
+    return `${params.percent}%`;
   };
 
   const sizing = {
@@ -103,9 +100,13 @@ const Pie = ({
               arcLabelMinAngle: 30,
               data: data.map((item) => ({
                 ...item,
-                label:
-                  type === "sales" ? `${item.label} in (₹ lac.)` : item.label,
+                label: `${item.label}: `,
+                color:
+                  item.percent < 0 ? "rgba(255, 99, 132, 0.8)" : "lightgreen", // Assign crimson color if value is negative
               })),
+              valueFormatter: (v) => {
+                return `₹ ${v.revenue} -> ${v.percent}%`;
+              },
               highlightScope: { faded: "global", highlighted: "item" },
               faded: { innerRadius: 30, additionalRadius: -30, color: "gray" },
               innerRadius: 30,
@@ -127,4 +128,4 @@ const Pie = ({
   );
 };
 
-export default Pie;
+export default GrowthRatePie;
