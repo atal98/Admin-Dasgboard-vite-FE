@@ -100,6 +100,10 @@ const Cards = ({ type, title, symbol, section, parturl, year, quarter }) => {
       value = data.return_delivered; // data.return_delivered
 
       break;
+    case "cac":
+      value = data.cac; // data.return_delivered
+
+      break;
     default:
       break;
   }

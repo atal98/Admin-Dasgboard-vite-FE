@@ -27,6 +27,7 @@ const Home = () => {
             title="Overview"
             onYearChange={handleYearChange}
             onQuarterChange={handleQuarterChange}
+            selectedQuarter={selectedQuarter}
           />
 
           <div className="widgets">
