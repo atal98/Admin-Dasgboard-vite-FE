@@ -24,7 +24,7 @@ const LastSixMonthOrder = ({ title, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await api.get(
+        const response = await axios.get(
           `/api/order/last_six_months_order_fulfill/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);

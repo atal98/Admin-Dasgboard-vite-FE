@@ -14,24 +14,24 @@ import ProtectRoute from "./components/ProtectRoute";
 // import { productInputs, userInputs } from "./formSource";
 // import "./style/dark.scss";
 
-function RegistorandLogout() {
-  localStorage.clear();
-  return <Register />;
-}
+// function RegistorandLogout() {
+//   localStorage.clear();
+//   return <Register />;
+// }
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        {/* <Route path="login" element={<Login />} /> */}
-        <Route path="register" element={<RegistorandLogout />} />
+        {/* <Route path="/" element={<Login />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<RegistorandLogout />} /> */}
         <Route
-          path="home"
+          path="/"
           element={
-            <ProtectRoute>
-              <Home />
-            </ProtectRoute>
+            // <ProtectRoute>
+            <Home />
+            // </ProtectRoute>
           }
         />
 
@@ -40,9 +40,9 @@ function App() {
           <Route
             index
             element={
-              <ProtectRoute>
-                <Users />
-              </ProtectRoute>
+              // <ProtectRoute>
+              <Users />
+              // </ProtectRoute>
             }
           />
           <Route path=":userId" element={<SingleUser />} />
@@ -53,9 +53,9 @@ function App() {
           <Route
             index
             element={
-              <ProtectRoute>
-                <Product />
-              </ProtectRoute>
+              // <ProtectRoute>
+              <Product />
+              // </ProtectRoute>
             }
           />
           <Route path=":productId" element={<SingleProduct />} />
@@ -66,9 +66,9 @@ function App() {
           <Route
             index
             element={
-              <ProtectRoute>
-                <Order />
-              </ProtectRoute>
+              // <ProtectRoute>
+              <Order />
+              // </ProtectRoute>
             }
           />
         </Route>
@@ -78,9 +78,9 @@ function App() {
           <Route
             index
             element={
-              <ProtectRoute>
-                <Delivery />
-              </ProtectRoute>
+              // <ProtectRoute>
+              <Delivery />
+              // </ProtectRoute>
             }
           />
         </Route>
@@ -90,9 +90,9 @@ function App() {
           <Route
             index
             element={
-              <ProtectRoute>
-                <Stats />
-              </ProtectRoute>
+              // <ProtectRoute>
+              <Stats />
+              // </ProtectRoute>
             }
           />
         </Route>

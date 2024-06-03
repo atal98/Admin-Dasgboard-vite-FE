@@ -20,7 +20,7 @@ const Widget = ({ type, parturl, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await api.get(
+        const response = await axios.get(
           `/api/dashboard/${parturl}/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);

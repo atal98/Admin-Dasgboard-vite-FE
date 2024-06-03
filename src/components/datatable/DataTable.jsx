@@ -18,7 +18,7 @@ export default function DataTable({ year, quarter }) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await api.get(
+        const response = await axios.get(
           `/api/user/user_table/?year=${year}&quarter=${quarter}`
         );
         // Add a unique id to each row

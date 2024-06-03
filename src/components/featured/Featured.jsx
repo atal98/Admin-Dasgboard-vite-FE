@@ -17,7 +17,7 @@ const Featured = ({ year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await api.get(
+        const response = await axios.get(
           `/api/dashboard/target/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);

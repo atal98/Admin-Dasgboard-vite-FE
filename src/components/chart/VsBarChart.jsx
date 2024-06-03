@@ -24,7 +24,7 @@ const VsBarChart = ({ title, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await api.get(
+        const response = await axios.get(
           `/api/stats/sales_vs_customer_vs_lead/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);
