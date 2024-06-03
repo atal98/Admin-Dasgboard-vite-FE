@@ -15,6 +15,7 @@ import {
   Legend,
 } from "chart.js";
 import "./chart.scss";
+import api from "../../api";
 
 ChartJS.register(
   CategoryScale,
@@ -34,7 +35,7 @@ const StackedBarChart = ({ title, section, parturl, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/${section}/${parturl}/?year=${year}&quarter=${quarter}`
         );
 

@@ -5,6 +5,7 @@ import "react-circular-progressbar/dist/styles.css";
 import GaugeComponent from "react-gauge-component";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import api from "../../api";
 
 // { year, quarter }
 const Featured = ({ year, quarter }) => {
@@ -16,7 +17,7 @@ const Featured = ({ year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/dashboard/target/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);
@@ -79,19 +80,22 @@ const Featured = ({ year, quarter }) => {
           <div className="item">
             <div className="itemTitle">TARGET</div>
             <div className="itemResult">
-              <div className="resultAmount">₹{data.target}L</div> {/*data.target*/}
+              <div className="resultAmount">₹{data.target}L</div>{" "}
+              {/*data.target*/}
             </div>
           </div>
           <div className="item">
             <div className="itemTitle">ACHIVED</div>
             <div className="itemResult">
-              <div className="resultAmount">₹{data.achived}L</div> {/*data.achived*/}
+              <div className="resultAmount">₹{data.achived}L</div>{" "}
+              {/*data.achived*/}
             </div>
           </div>
           <div className="item">
             <div className="itemTitle">REMAINING</div>
             <div className="itemResult">
-              <div className="resultAmount">₹{data.remaining}L</div> {/*data.remaining*/}
+              <div className="resultAmount">₹{data.remaining}L</div>{" "}
+              {/*data.remaining*/}
             </div>
           </div>
         </div>

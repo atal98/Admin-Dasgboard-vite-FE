@@ -4,6 +4,7 @@ import axios from "../axios/Axios";
 import { PieChart } from "@mui/x-charts/PieChart";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import api from "../../api";
 
 const Pie = ({
   type,
@@ -27,7 +28,7 @@ const Pie = ({
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/${section}/${parturl}/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);

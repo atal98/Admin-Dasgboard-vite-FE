@@ -13,12 +13,27 @@ import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSyst
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
+import api from "../../api";
+import { REFRESH_TOKEN, ACCESS_TOKEN } from "../../constants";
 
 const SideBar = () => {
+  const handleLogout = async () => {
+    try {
+      const refreshToken = localStorage.getItem(REFRESH_TOKEN);
+      if (refreshToken) {
+        await api.post("/api/auth/logout/", { refresh: refreshToken });
+      }
+      localStorage.removeItem(ACCESS_TOKEN);
+      localStorage.removeItem(REFRESH_TOKEN);
+      window.location.href = "/login";
+    } catch (error) {
+      console.error("Failed to logout:", error);
+    }
+  };
   return (
     <div className="sidebar">
       <div className="top">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/home" style={{ textDecoration: "none" }}>
           <span className="logo">Admin</span>
         </Link>
       </div>
@@ -28,7 +43,7 @@ const SideBar = () => {
       <div className="centre">
         <ul>
           <p className="title">MAIN</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/home" style={{ textDecoration: "none" }}>
             <li>
               <DashboardIcon className="icon" />
               <span>Dashboard</span>
@@ -90,7 +105,7 @@ const SideBar = () => {
           </li>
           <li>
             <ExitToAppIcon className="icon" />
-            <span>Logout</span>
+            <button onClick={handleLogout}>Logout</button>
           </li>
         </ul>
       </div>

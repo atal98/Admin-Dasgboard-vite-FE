@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import api from "../../api";
 
 const VsBarChart = ({ title, year, quarter }) => {
   const [data, setData] = useState({});
@@ -23,7 +24,7 @@ const VsBarChart = ({ title, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/stats/sales_vs_customer_vs_lead/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);

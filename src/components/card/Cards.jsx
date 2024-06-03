@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "../axios/Axios";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import api from "../../api";
 
 // { type, title, symbol, section, parturl, year, quarter }
 const Cards = ({ type, title, symbol, section, parturl, year, quarter }) => {
@@ -14,7 +15,7 @@ const Cards = ({ type, title, symbol, section, parturl, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/${section}/${parturl}/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);

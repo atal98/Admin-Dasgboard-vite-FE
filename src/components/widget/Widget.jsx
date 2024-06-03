@@ -8,6 +8,8 @@ import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import { Link } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import api from "../../api";
+
 // { parturl, year, quarter }
 const Widget = ({ type, parturl, year, quarter }) => {
   const [data, setData] = useState({});
@@ -18,7 +20,7 @@ const Widget = ({ type, parturl, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/dashboard/${parturl}/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);
