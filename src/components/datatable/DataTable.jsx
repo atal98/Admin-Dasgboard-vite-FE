@@ -7,6 +7,7 @@ import { userColumns } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import api from "../../api";
 
 export default function DataTable({ year, quarter }) {
   const [data, setData] = useState({});
@@ -17,7 +18,7 @@ export default function DataTable({ year, quarter }) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/user/user_table/?year=${year}&quarter=${quarter}`
         );
         // Add a unique id to each row

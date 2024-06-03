@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import api from "../../api";
 
 // { title, year, quarter }
 const LastSixMonthOrder = ({ title, year, quarter }) => {
@@ -23,7 +24,7 @@ const LastSixMonthOrder = ({ title, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/order/last_six_months_order_fulfill/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);

@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import api from "../../api";
 
 // { title, year, quarter }
 const Revenue = ({ title, year, quarter }) => {
@@ -22,7 +23,7 @@ const Revenue = ({ title, year, quarter }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
+        const response = await api.get(
           `/api/dashboard/last_six_months_revenue/?year=${year}&quarter=${quarter}`
         );
         setData(response.data);
