@@ -23,7 +23,7 @@ const Form = ({ route, method }) => {
         localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
         navigate("/home");
       } else {
-        navigate("/login");
+        navigate("/");
       }
     } catch (error) {
       // Display error message (400 Bad Request)
@@ -41,7 +41,7 @@ const Form = ({ route, method }) => {
     window.location.href = "/register";
   };
   const handleRedirectLogin = () => {
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   return (

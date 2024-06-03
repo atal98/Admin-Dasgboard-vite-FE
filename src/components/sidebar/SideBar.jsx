@@ -25,7 +25,7 @@ const SideBar = () => {
       }
       localStorage.removeItem(ACCESS_TOKEN);
       localStorage.removeItem(REFRESH_TOKEN);
-      window.location.href = "/login";
+      window.location.href = "/";
     } catch (error) {
       console.error("Failed to logout:", error);
     }
